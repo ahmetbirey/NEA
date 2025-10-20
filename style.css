@@ -1,0 +1,809 @@
+/*
+    NEA Stil Dosyası - v9 (Kapsamlı Portfolyo - Koyu Tema)
+    
+    RENKLER:
+    - Kömür (Ana Zemin): #1A1A1A
+    - Beton (Ara Zemin): #353535
+    - Konyak (Vurgu): #a47764
+    - Açık Metin: #F5F5F5
+    - Gri Metin (İkincil): #939597
+*/
+
+/* 1. Global Ayarlar ve Değişkenler */
+:root {
+    --color-primary-bg: #1A1A1A;
+    --color-secondary-bg: #353535;
+    --color-mid-text: #939597;
+    --color-accent: #a47764;
+    --color-light-text: #F5F5F5;
+    --color-white: #ffffff;
+    
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-accent: 'Cormorant Garamond', serif;
+
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --container-width: 1400px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-primary-bg);
+    color: var(--color-light-text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.nav-active {
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+section {
+    padding: 8rem 0;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--color-secondary-bg);
+}
+section:last-of-type {
+    border-bottom: none;
+}
+
+.full-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Başlık ve Metin Stilleri */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+}
+h1 { font-size: clamp(3.5rem, 9vw, 7rem); }
+h2 { font-size: clamp(2.5rem, 6vw, 3.8rem); }
+h3 { font-size: clamp(1.4rem, 4vw, 1.8rem); }
+p { 
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem; 
+    max-width: 700px; 
+    font-weight: 300;
+    color: var(--color-light-text);
+}
+
+.eyebrow {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--color-mid-text);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+.eyebrow-small {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.7rem;
+    color: var(--color-mid-text);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.text-link {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--color-light-text);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--color-light-text);
+    transition: var(--transition);
+}
+.text-link:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-header h2 {
+    margin-bottom: 1rem;
+}
+.section-header p {
+    color: var(--color-mid-text);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 2. Header & Nav */
+header {
+    width: 100%;
+    padding: 1.8rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+header.scrolled {
+    background-color: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-secondary-bg);
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    height: 30px;
+    width: auto;
+    z-index: 1001;
+    filter: brightness(0) invert(-1);
+}
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--color-white);
+    transition: var(--transition);
+}
+.hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+}
+.hamburger-lines span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.menu-toggle.active span { color: var(--color-white); }
+.menu-toggle.active .hamburger-lines span { background-color: var(--color-white) !important; }
+.menu-toggle.active .hamburger-lines span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.active .hamburger-lines span:nth-child(2) { transform: translateY(-8px) rotate(-45deg); }
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary-bg);
+    color: var(--color-light-text);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: var(--transition);
+}
+.nav-overlay.active { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-overlay-menu ul { list-style: none; text-align: center; }
+.nav-overlay-menu li { margin: 1rem 0; }
+.nav-overlay-menu a {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 600;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+}
+.nav-overlay-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: var(--transition);
+}
+.nav-overlay-menu a:hover::after { width: 100%; }
+.nav-overlay-footer {
+    position: absolute;
+    bottom: 3rem;
+    text-align: center;
+    color: var(--color-mid-text);
+    font-size: 0.9rem;
+}
+
+/* 1. Hero Alanı */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    border-bottom: 1px solid var(--color-secondary-bg);
+}
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(0.6) grayscale(0.1);
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--color-white);
+    max-width: 900px;
+    margin: 0 auto;
+}
+.hero h1 {
+    line-height: 0.9;
+    letter-spacing: -2px;
+    margin-bottom: 2rem;
+    color: var(--color-white);
+}
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 1.5rem;
+    color: var(--color-light-text);
+    max-width: 100%;
+}
+
+/* 2. Hakkımızda (Felsefe) Alanı */
+.about {
+    background-color: var(--color-secondary-bg);
+    text-align: center;
+}
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.about-content h2 {
+    margin-bottom: 2rem;
+}
+.about-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--color-mid-text);
+    line-height: 1.6;
+}
+.about-content .text-link {
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+.about-content .text-link:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* 3. Faaliyet Alanları (Hizmetler) */
+.services {
+    background-color: var(--color-primary-bg);
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+/* (YENİ) 3 Sütunlu Grid */
+.services-grid.three-columns {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.service-card {
+    display: block;
+    text-decoration: none;
+    color: var(--color-light-text);
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.service-image-wrapper {
+    position: relative;
+    padding-bottom: 75%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background-color: var(--color-secondary-bg);
+}
+.service-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.9;
+}
+.service-card:hover .service-image-wrapper img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+.service-info {
+    position: relative;
+    z-index: 2;
+}
+.service-number {
+    font-family: var(--font-accent);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.service-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    color: var(--color-white);
+}
+.service-info p {
+    font-size: 1rem;
+    color: var(--color-mid-text);
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+/* 4. Projeler Alanı */
+.projects {
+    background-color: var(--color-secondary-bg);
+}
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+.filter-btn {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--color-mid-text);
+    background-color: transparent;
+    border: 1px solid var(--color-secondary-bg);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.filter-btn:hover {
+    color: var(--color-white);
+    border-color: var(--color-mid-text);
+}
+.filter-btn.active {
+    color: var(--color-white);
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+/* (YENİ) 3 Sütunlu Grid */
+.project-grid.three-columns {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.project-card.hide {
+    display: none;
+}
+.project-card {
+    display: block;
+    text-decoration: none;
+    color: var(--color-light-text);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+.project-image-wrapper {
+    position: relative;
+    padding-bottom: 75%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background-color: var(--color-primary-bg);
+}
+.project-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.9;
+}
+.project-card:hover .project-image-wrapper img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+.project-info {
+    position: relative;
+    z-index: 2;
+}
+.project-number {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.project-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    color: var(--color-white);
+}
+.project-info p {
+    font-size: 1rem;
+    color: var(--color-mid-text);
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+/* 5. Tasarım İmzası (Materyaller) */
+.materials {
+    background-color: var(--color-primary-bg);
+}
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+.material-item {
+    text-align: center;
+}
+.material-image {
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--color-secondary-bg);
+}
+.material-image img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+.material-item:hover .material-image img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.material-item h3 {
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+.material-item p {
+    color: var(--color-mid-text);
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+/* 6. Süreç Alanı (4 Adım) */
+.process {
+    background-color: var(--color-secondary-bg);
+    text-align: center;
+}
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Adım */
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+}
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 2.5rem;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background-color: var(--color-mid-text);
+    opacity: 0.3;
+    z-index: 0;
+}
+.process-step {
+    position: relative;
+    z-index: 1;
+}
+.process-number {
+    font-family: var(--font-accent);
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 1rem;
+    background-color: var(--color-secondary-bg);
+    padding: 0 1rem;
+    display: inline-block;
+}
+.process-content h3 {
+    margin-bottom: 0.5rem;
+}
+.process-content p {
+    font-size: 1rem;
+    color: var(--color-mid-text);
+    margin-bottom: 0;
+    max-width: 100%;
+}
+
+/* 7. İletişim Alanı */
+.contact {
+    background-color: var(--color-primary-bg);
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: flex-start;
+}
+.contact-info h2 {
+    margin-bottom: 1rem;
+}
+.contact-info p {
+    font-size: 1.1rem;
+    color: var(--color-mid-text);
+    max-width: 500px;
+    margin-bottom: 3rem;
+}
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.contact-details a, .contact-details p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-light-text);
+    text-decoration: none;
+    margin-bottom: 0;
+    transition: var(--transition);
+}
+.contact-details a:hover {
+    color: var(--color-accent);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-mid-text);
+    margin-bottom: 0.5rem;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background-color: var(--color-secondary-bg);
+    border: 1px solid var(--color-secondary-bg);
+    border-radius: 5px;
+    color: var(--color-light-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background-color: var(--color-primary-bg);
+}
+.form-group textarea {
+    resize: vertical;
+}
+.cta-button {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border: 2px solid var(--color-accent);
+    padding: 0.9rem 2.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    border-radius: 5px;
+    transition: var(--transition);
+    cursor: pointer;
+    width: 100%;
+}
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--color-accent);
+}
+
+/* 8. Footer */
+footer {
+    background-color: var(--color-primary-bg);
+    color: var(--color-mid-text);
+    padding: 5rem 0;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--color-secondary-bg);
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 3rem;
+}
+.logo-footer {
+    height: 30px;
+    width: auto;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(0.8);
+}
+.footer-col h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-light-text);
+    margin-bottom: 1.2rem;
+}
+.footer-col a, .footer-col p {
+    color: var(--color-mid-text);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.6rem;
+    transition: var(--transition);
+}
+.footer-col a:hover {
+    color: var(--color-accent);
+}
+.footer-col .copyright {
+    margin-top: 1.5rem;
+}
+
+/* 9. Animasyonlar (Fade-in) */
+.fade-in-up, .fade-in-up-delay, .fade-in-left, .fade-in-right {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.appear, .fade-in-up-delay.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-in-up-delay { transition-delay: 0.2s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-600 { transition-delay: 0.6s; } /* 4. süreç adımı için */
+
+.fade-in-left { transform: translateX(-50px); }
+.fade-in-left.appear { opacity: 1; transform: translateX(0); }
+.fade-in-right { transform: translateX(50px); }
+.fade-in-right.appear { opacity: 1; transform: translateX(0); }
+
+
+/* 10. Responsive Ayarlar */
+@media (max-width: 992px) {
+    .full-screen {
+        min-height: auto;
+        padding: 6rem 0;
+    }
+    h1 { font-size: clamp(3rem, 10vw, 5rem); }
+    h2 { font-size: clamp(2rem, 8vw, 3rem); }
+    p { font-size: 1rem; }
+
+    .services-grid,
+    .project-grid {
+        grid-template-columns: 1fr 1fr; /* Tablette 2 sütun */
+    }
+
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-timeline {
+        grid-template-columns: 1fr 1fr; /* Tablette 2x2 */
+        gap: 3rem;
+    }
+    .process-timeline::before {
+        display: none;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .contact-info {
+        text-align: center;
+    }
+    .contact-details {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle span { display: none; }
+    .nav-overlay-menu a { font-size: clamp(2rem, 8vw, 3rem); }
+    .hero h1 { letter-spacing: -1px; }
+    .hero-subtitle { font-size: 1.2rem; }
+    
+    .project-filters {
+        gap: 0.5rem;
+    }
+    .filter-btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .services-grid,
+    .project-grid,
+    .process-timeline {
+        grid-template-columns: 1fr; /* Mobilde tek sütun */
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEA - Geleceğin Geometrisi</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@300;400;500&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="NEA Logo" class="logo">
+            </a>
+            <button class="menu-toggle" id="menu-toggle-button" aria-label="Menüyü aç">
+                <span>Menu</span>
+                <div class="hamburger-lines">
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay">
+        <nav class="nav-overlay-menu">
+            <ul>
+                <li><a href="#felsefe" class="nav-link">Felsefe</a></li>
+                <li><a href="#faaliyet-alanlari" class="nav-link">Faaliyet Alanları</a></li>
+                <li><a href="#projects" class="nav-link">Projeler</a></li>
+                <li><a href="#nea-signature" class="nav-link">Tasarım İmzası</a></li>
+                <li><a href="#process" class="nav-link">Sürecimiz</a></li>
+                <li><a href="#contact" class="nav-link">İletişim</a></li>
+            </ul>
+        </nav>
+        <div class="nav-overlay-footer">
+            <p>Geleceğin Geometrisi. © 2025</p>
+        </div>
+    </div>
+
+    <section class="hero full-screen">
+        <div class="hero-image" style="background-image: url('images/project-villa-exterior.png');"></div>
+        <div class="hero-content">
+            <h1 class="fade-in-up">
+                YAŞAMI.<br>
+                YENİDEN.<br>
+                PROGRAMLAMAK.
+            </h1>
+            <p class="hero-subtitle fade-in-up-delay">Fayansın bittiği, mikrobetonun başladığı yer.</p>
+        </div>
+    </section>
+
+    <section id="felsefe" class="about full-screen">
+        <div class="container">
+            <div class="about-content">
+                <span class="eyebrow fade-in-up">NEA FELSEFESİ</span>
+                <h2 class="fade-in-up">
+                    Biz bina inşa etmiyoruz.<br>
+                    Boşluğu tasarlıyoruz.
+                </h2>
+                <p class="fade-in-up-delay">
+                    Geleneksel inşaat, alanı "böler". NEA, alanı "bütünleştirir". Pürüzsüz mikrobeton yüzeyler, dikişsiz cam paneller ve gizli detaylarla, size sadece deneyimin kalacağı saf bir hacim sunarız. 1+1 modüllerden lüks villalara, penthouse'lardan karma yaşam projelerine kadar her ölçekte aynı tasarım imzasını atıyoruz.
+                </p>
+                <a href="#faaliyet-alanlari" class="text-link fade-in-up-delay">Uzmanlık Alanlarımız →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faaliyet-alanlari" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow fade-in-up">UZMANLIK ALANLARI</span>
+                <h2 class="fade-in-up">Faaliyet Alanlarımız</h2>
+            </div>
+            <div class="services-grid three-columns"> <a href="#" class="service-card fade-in-up">
+                    <div class="service-image-wrapper">
+                        <img src="images/project-modul-solus.png" alt="NEA MODUL">
+                    </div>
+                    <div class="service-info">
+                        <span class="service-number">01</span>
+                        <h3>NEA MODUL (Lüks Prefabrik)</h3>
+                        <p>1+1 müstakil yaşam modülleri. Fabrika hassasiyeti, premium materyaller ve akıllı çözümler.</p>
+                    </div>
+                </a>
+                <a href="#" class="service-card fade-in-up delay-200">
+                    <div class="service-image-wrapper">
+                        <img src="images/project-villa-interior.png" alt="NEA SIGNATURE">
+                    </div>
+                    <div class="service-info">
+                        <span class="service-number">02</span>
+                        <h3>NEA SIGNATURE (Taahhüt)</h3>
+                        <p>Lüks villa, penthouse ve konut taahhüt işleri. NEA tasarım imzasını projenize uyguluyoruz.</p>
+                    </div>
+                </a>
+                <a href="#" class="service-card fade-in-up delay-400">
+                    <div class="service-image-wrapper">
+                        <img src="images/project-development.png" alt="NEA DEVELOPMENT">
+                    </div>
+                    <div class="service-info">
+                        <span class="service-number">03</span>
+                        <h3>NEA DEVELOPMENT (Geliştirme)</h3>
+                        <p>Arsa geliştirmeden, modern site ve karma yaşam (AVM) projelerine kadar büyük ölçekli müteahhitlik.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow fade-in-up">PORTFOLYO</span>
+                <h2 class="fade-in-up">Projelerimiz</h2>
+            </div>
+            
+            <div class="project-filters fade-in-up">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="ongoing">Devam Eden</button>
+                <button class="filter-btn" data-filter="completed">Tamamlanan</button>
+            </div>
+
+            <div class="project-grid three-columns"> <a href="#" class="project-card fade-in-up" data-category="completed">
+                    <div class="project-image-wrapper"><img src="images/project-villa-exterior.png" alt="Proje 1"></div>
+                    <div class="project-info">
+                        <span class="project-number">TAMAMLANDI</span>
+                        <h3>SIGNATURE / YALIKAVAK</h3>
+                        <p>Ateş çukuru ve sonsuzluk havuzlu, brütalist dış cepheli lüks villa.</p>
+                    </div>
+                </a>
+                <a href="#" class="project-card fade-in-up delay-200" data-category="ongoing">
+                    <div class="project-image-wrapper"><img src="images/project-penthouse.png" alt="Proje 2"></div>
+                    <div class="project-info">
+                        <span class="project-number">DEVAM EDİYOR</span>
+                        <h3>SIGNATURE / ETİLER</h3>
+                        <p>Teraslı penthouse dairesinin NEA imzasıyla komple yenilenmesi.</p>
+                    </div>
+                </a>
+                 <a href="#" class="project-card fade-in-up delay-400" data-category="completed">
+                    <div class="project-image-wrapper"><img src="images/project-modul-solus.png" alt="Proje 3"></div>
+                    <div class="project-info">
+                        <span class="project-number">TAMAMLANDI</span>
+                        <h3>MODUL / SAPANCA</h3>
+                        <p>Göl kenarında, 45m²'lik 1+1 "Solus" modülü anahtar teslimi.</p>
+                    </div>
+                </a>
+                 <a href="#" class="project-card fade-in-up" data-category="ongoing">
+                    <div class="project-image-wrapper"><img src="images/project-development.png" alt="Proje 4"></div>
+                    <div class="project-info">
+                        <span class="project-number">DEVAM EDİYOR</span>
+                        <h3>DEVELOPMENT / MASLAK</h3>
+                        <p>2 Blok konut ve AVM'den oluşan karma yaşam projesi arsa geliştirmesi.</p>
+                    </div>
+                </a>
+                 <a href="#" class="project-card fade-in-up delay-200" data-category="completed">
+                    <div class="project-image-wrapper"><img src="images/project-villa-interior.png" alt="Proje 5"></div>
+                    <div class="project-info">
+                        <span class="project-number">TAMAMLANDI</span>
+                        <h3>SIGNATURE / KEMER</h3>
+                        <p>Çerçevesiz pivot kapılar ve mikrobeton zeminler ile minimalist villa taahhütü.</p>
+                    </div>
+                </a>
+                 <a href="#" class="project-card fade-in-up delay-400" data-category="completed">
+                    <div class="project-image-wrapper"><img src="images/project-urban.png" alt="Proje 6"></div>
+                    <div class="project-info">
+                        <span class="project-number">TAMAMLANDI</span>
+                        <h3>URBAN / NİŞANTAŞI</h3>
+                        <p>120m²'lik dairenin tüm "eski tip" uygulamalardan arındırılması.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nea-signature" class="materials">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow fade-in-up">FARKIMIZ</span>
+                <h2 class="fade-in-up">NEA Tasarım İmzası</h2>
+                <p class="fade-in-up-delay">Tüm projelerimizde standartların ötesine geçerek dokunsal bir lüks yaratıyoruz.</p>
+            </div>
+            <div class="materials-grid">
+                <div class="material-item fade-in-up">
+                    <div class="material-image"><img src="images/nea-material-detail.png" alt="Mikrobeton"></div>
+                    <h3>Dikişsiz Yüzeyler</h3>
+                    <p>Fayans ve derzlerin gürültüsü yerine, zemin ve duvarlarda dikişsiz, heykelsi mikrobeton bütünlüğü.</p>
+                </div>
+                <div class="material-item fade-in-up delay-200">
+                    <div class="material-image"><img src="images/nea-material-wood.png" alt="Yanmış Ahşap"></div>
+                    <h3>Doğal & Sıcak Dokular</h3>
+                    <p>Dış cephede Shou Sugi Ban (yanmış ahşap) veya iç mekanda ısıl işlem görmüş masif dokunuşlar.</p>
+                </div>
+                <div class="material-item fade-in-up delay-400">
+                    <div class="material-image"><img src="images/nea-material-metal.png" alt="Metal Detaylar"></div>
+                    <h3>Minimal Detaylar</h3>
+                    <p>Çerçevesiz kapılar, minimal alüminyum sistemler ve gölgeli (gizli) süpürgelikler.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process full-screen">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow fade-in-up">NASIL ÇALIŞIRIZ?</span>
+                <h2 class="fade-in-up">Sürecimiz</h2>
+            </div>
+            <div class="process-timeline">
+                
+                <div class="process-step fade-in-up">
+                    <span class="process-number">01</span>
+                    <div class="process-content">
+                        <h3>Konsept & Geliştirme</h3>
+                        <p>Vizyonunuzu dinliyor, arsa veya mekan potansiyelini analiz ediyoruz. Bütçe ve konsepti oluşturuyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="process-step fade-in-up delay-200">
+                    <span class="process-number">02</span>
+                    <div class="process-content">
+                        <h3>Mimari Projelendirme</h3>
+                        <p>NEA tasarım imzasını (mikrobeton, ahşap vb.) projeye entegre ediyor, tüm uygulama çizimlerini hazırlıyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="process-step fade-in-up delay-400">
+                    <span class="process-number">03</span>
+                    <div class="process-content">
+                        <h3>İnşaat & Taahhüt</h3>
+                        <p>Kaliteden ödün vermeden, yenilikçi materyallerle inşaat veya yenileme sürecini yönetiyoruz.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in-up delay-600"> <span class="process-number">04</span>
+                    <div class="process-content">
+                        <h3>Anahtar Teslim</h3>
+                        <p>Tüm detayları tamamlanmış, kusursuz ve temiz bir şekilde yeni yaşam alanınızı size teslim ediyoruz.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container contact-grid">
+            <div class="contact-info fade-in-left">
+                <span class="eyebrow">İLETİŞİME GEÇİN</span>
+                <h2>Geleceğin geometrisini birlikte tasarlayalım.</h2>
+                <p>Projenizi veya hayalinizdeki modülü anlatmak için bir toplantı planlayın. Ekibimiz sizinle iletişime geçecektir.</p>
+                <div class="contact-details">
+                    <div class="detail-item">
+                        <span class="eyebrow-small">E-POSTA</span>
+                        <a href="mailto:info@nea.com.tr">info@nea.com.tr</a>
+                    </div>
+                    <div class="detail-item">
+                        <span class="eyebrow-small">OFİS</span>
+                        <p>NEA Studio, Maslak, İstanbul</p>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form fade-in-right">
+                <div class="form-group">
+                    <label for="name">Adınız Soyadınız</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta Adresiniz</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">İlgilendiğiniz Hizmet</label>
+                    <select id="service" name="service">
+                        <option value="modul">NEA MODUL (1+1)</option>
+                        <option value="signature">NEA SIGNATURE (Villa/Penthouse)</option>
+                        <option value="development">NEA DEVELOPMENT (Site/AVM)</option>
+                        <option value="diger">Diğer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Proje Detayları</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Mesajı Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <img src="images/logo.png" alt="NEA Logo Footer" class="logo-footer">
+                <p class="copyright">&copy; 2025 NEA.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Menü</h4>
+                <a href="#felsefe">Felsefe</a>
+                <a href="#faaliyet-alanlari">Faaliyet Alanları</a>
+                <a href="#projects">Projeler</a>
+                <a href="#process">Sürecimiz</a>
+            </div>
+            <div class="footer-col">
+                <h4>İletişim</h4>
+                <a href="mailto:info@nea.com.tr">info@nea.com.tr</a>
+                <p>+90 (212) 555 00 00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Sosyal</h4>
+                <a href="#">Behance</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Menü Toggle ---
+        const menuButton = document.getElementById('menu-toggle-button');
+        const navOverlay = document.getElementById('nav-overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const body = document.body;
+
+        function toggleMenu() {
+            body.classList.toggle('nav-active');
+            navOverlay.classList.toggle('active');
+            menuButton.classList.toggle('active');
+        }
+
+        menuButton.addEventListener('click', toggleMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // --- Header Scroll ---
+        const header = document.querySelector('header');
+        const heroSection = document.querySelector('.hero');
+
+        const headerObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    header.classList.remove('scrolled');
+                } else {
+                    header.classList.add('scrolled');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        headerObserver.observe(heroSection);
+
+        // --- Fade-in Animasyonları ---
+        const faders = document.querySelectorAll('.fade-in-up, .fade-in-up-delay, .fade-in-left, .fade-in-right');
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px" 
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('appear');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // --- Proje Filtreleme ---
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.classList.remove('hide');
+                    } else {
+                        card.classList.add('hide');
+                    }
+                });
+            });
+        });
+
+    </script>
+
+</body>
+</html>
